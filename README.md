@@ -1,1 +1,26 @@
-# firebase-quasar-jitsi
+# Quasar Jitsi Firebase Video Conference App (quasar-jitsi-firebase)
+
+Quasr framework UI with Firebase hosting & authentication with connection to Jitsi Server on a Digital Ocean(DO) instance.
+
+## Install the dependencies
+```bash
+yarn
+```
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
+
+### Lint the files
+```bash
+yarn run lint
+```
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
