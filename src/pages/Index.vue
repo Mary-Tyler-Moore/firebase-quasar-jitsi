@@ -1,7 +1,10 @@
 
 <template>
   <q-page class="column items-center justify-center bg-grey-7 text-white">
-    <div class="full-width" id="jitsi-container"></div>
+    <div
+      class="full-width"
+      id="jitsi-container"
+    ></div>
   </q-page>
 </template>
 
@@ -30,8 +33,8 @@ export default {
     openRoom () {
       const self = this
       this.$q.dialog({
-        title: 'Prompt',
-        message: 'What is your name?',
+        title: 'Welcome to J.C. Lewis Ford',
+        message: 'Please enter your name.',
         prompt: {
           model: '',
           type: 'text' // optional
@@ -41,11 +44,16 @@ export default {
       }).onOk(data => {
         self.username = data
         this.$q.dialog({
-          title: 'Prompt',
-          message: 'What is your room name?',
-          prompt: {
-            model: '',
-            type: 'text' // optional
+          title: 'Welcome to J.C. Lewis Ford',
+          message: 'Please select a department.',
+          options: {
+            type: 'radio', // or 'checkbox' / 'toggle'
+            model: 'sales', // Array when checkbox/toggle! (like '[]')
+            items: [
+              { label: 'Sales', value: 'sales' },
+              { label: 'Service', value: 'service' },
+              { label: 'Finance', value: 'finance' }
+            ]
           },
           cancel: true,
           persistent: true
@@ -72,6 +80,6 @@ export default {
 }
 </script>
 <style lang="sass">
-  #jitsi-containe
-    height: 100vh
+#jitsi-container
+  height: 100vh
 </style>
